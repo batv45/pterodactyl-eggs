@@ -34,4 +34,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/batv45/games:${{ matrix.game }}
+            ghcr.io/batv45/pterodactyl-eggs:${{ matrix.game }}
