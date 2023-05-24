@@ -3,11 +3,4 @@ FROM ghcr.io/pterodactyl/games:source
 LABEL author="Batuhan OK" maintainer="activ45@hotmail.com"
 LABEL org.opencontainers.image.description="cs16 ReHlds"
  
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN dpkg --add-architecture i386 \
- && apt update \
- && apt upgrade -y \
- && apt -y --no-install-recommends install curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd
-
 COPY ./files /home/container
