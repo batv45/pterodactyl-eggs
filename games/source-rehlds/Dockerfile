@@ -2,8 +2,7 @@ FROM ghcr.io/pterodactyl/games:source
 
 LABEL author="Batuhan OK" maintainer="activ45@hotmail.com"
 LABEL org.opencontainers.image.description="cs16 ReHlds"
-
-RUN /bin/bash -c 'echo "======= MERHABA AMCA ========'
+ 
 RUN dpkg --add-architecture i386 \
 				&& apt update \
 				&& apt upgrade -y \
