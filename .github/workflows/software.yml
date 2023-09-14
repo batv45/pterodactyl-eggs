@@ -5,7 +5,7 @@ on:
     - cron: "0 0 * * 1"
   push:
     branches:
-      - master
+      - main
     paths:
       - software/**
 jobs:
@@ -37,4 +37,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/batv45/yolks:${{ matrix.software }}
+            ghcr.io/batv45/software:${{ matrix.software }}
