@@ -10,8 +10,7 @@ RUN         apk add --update --no-cache ca-certificates tzdata freeradius freera
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container 
-
-ADD --chown=root:container ./etc/raddb/ /etc/raddb
+ 
 
 RUN /etc/raddb/certs/bootstrap && \
     chown -R root:container /etc/raddb/certs && \
