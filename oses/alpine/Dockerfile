@@ -9,12 +9,13 @@ RUN         apk add --update --no-cache ca-certificates tzdata freeradius freera
 
 USER        container
 ENV         USER=container HOME=/home/container
-WORKDIR     /home/container 
- 
+WORKDIR     /home/container  
 
-RUN /etc/raddb/certs/bootstrap && \
-    chown -R root:container /etc/raddb/certs && \
-    chmod 640 /etc/raddb/certs/*.pem
+
+ADD --chown=root:container /etc/ssl
+RUN /home/container/raddb/certs/bootstrap && \
+    chown -R root:radius /home/container/raddb/certs && \
+    chmod 640 /home/container/raddb/certs/*.pem
 
 COPY        ./entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/ash", "/entrypoint.sh" ]
