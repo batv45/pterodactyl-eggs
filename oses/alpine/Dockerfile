@@ -1,5 +1,5 @@
 
-FROM        --platform=$TARGETOS/$TARGETARCH alpine:latest
+FROM        --platform=$TARGETOS/$TARGETARCH alpine:3.13.1
 
 LABEL       author="Batuhan OK" maintainer="activ45@hotmail.com" 
 
